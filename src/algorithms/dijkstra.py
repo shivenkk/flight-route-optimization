@@ -7,191 +7,269 @@ The graph data is available in: ../../output/graph_dijkstra.json
 Format: {source: {destination: weight, ...}, ...}
 """
 
+
+"""
+Dijkstra Algorithm Implementation for Flight Route Optimization
+
+The graph data is available in: output/graph_dijkstra.json
+Format: {source_city: {dest_city: weight, ...}, ...}
+"""
+
 import json
 import heapq
 import time
+from typing import Dict, List, Tuple
 
-def dijkstra(graph, start, end):
-    """Find shortest path using Dijkstra's algorithm"""
-    # Set all distances to infinity except start
+def dijkstra(graph: Dict, start: str) -> Tuple[Dict[str, float], Dict[str, str]]:
+    """
+    Dijkstra algorithm implementation.
+    
+    Args:
+        graph: Adjacency list representation of the graph
+        start: Starting node
+        
+    Returns:
+        Tuple of (distances dict, predecessors dict)
+    """
+    # Initialize distances and predecessors
     distances = {city: float('inf') for city in graph}
     distances[start] = 0
-    
-    # Track how we got to each city
-    parent = {}
+    predecessors = {city: None for city in graph}
     
     # Priority queue with (distance, city)
     pq = [(0, start)]
     visited = set()
-    nodes_explored = 0
     
     while pq:
-        dist, city = heapq.heappop(pq)
+        current_dist, current_city = heapq.heappop(pq)
         
-        if city in visited:
+        if current_city in visited:
             continue
-        visited.add(city)
-        nodes_explored += 1
+        visited.add(current_city)
         
-        # Found destination
-        if city == end:
-            break
-            
         # Check all neighbors
-        for neighbor, cost in graph.get(city, {}).items():
-            new_dist = dist + cost
+        for neighbor, weight in graph.get(current_city, {}).items():
+            new_dist = current_dist + weight
             if new_dist < distances[neighbor]:
                 distances[neighbor] = new_dist
-                parent[neighbor] = city
+                predecessors[neighbor] = current_city
                 heapq.heappush(pq, (new_dist, neighbor))
     
-    # Build path
-    if end not in parent and start != end:
-        return None, float('inf'), nodes_explored
+    return distances, predecessors
+
+def find_shortest_path(graph_file: str, start: str, end: str) -> Dict:
+    """
+    Find shortest path between two cities using Dijkstra algorithm.
     
+    Args:
+        graph_file: Path to the graph JSON file
+        start: Starting city code
+        end: Destination city code
+        
+    Returns:
+        Dictionary containing path details and metrics
+    """
+    start_time = time.time()
+    
+    # Load graph data
+    with open(graph_file, 'r') as f:
+        graph = json.load(f)
+    
+    # Validate input cities
+    if start not in graph:
+        return {
+            'path': None,
+            'cost': float('inf'),
+            'error': f"Starting city '{start}' not found in graph",
+            'execution_time': time.time() - start_time
+        }
+    
+    if end not in graph:
+        return {
+            'path': None,
+            'cost': float('inf'),
+            'error': f"Destination city '{end}' not found in graph",
+            'execution_time': time.time() - start_time
+        }
+    
+    # Run Dijkstra algorithm
+    distances, predecessors = dijkstra(graph, start)
+    
+    # Check if destination is reachable
+    if distances[end] == float('inf'):
+        return {
+            'path': None,
+            'cost': float('inf'),
+            'error': f"No route found from {start} to {end}",
+            'execution_time': time.time() - start_time
+        }
+    
+    # Reconstruct path
     path = []
     current = end
-    while current in parent:
+    while current is not None:
         path.append(current)
-        current = parent[current]
-    path.append(start)
+        current = predecessors[current]
     path.reverse()
     
-    return path, distances[end], nodes_explored
+    # Calculate execution time
+    execution_time = time.time() - start_time
+    
+    return {
+        'path': path,
+        'cost': distances[end],
+        'stops': len(path) - 1,
+        'execution_time': execution_time,
+        'algorithm': 'Dijkstra'
+    }
 
-def analyze_results(test_results):
-    """Simple analysis of Dijkstra results"""
-    print("\n" + "="*50)
-    print("DIJKSTRA ALGORITHM RESULTS ANALYSIS")
-    print("="*50)
+def analyze_all_routes_from_city(graph_file: str, start: str) -> Dict:
+    """
+    Find shortest paths from a city to all other cities.
     
-    successful = [(route, path, cost, time_ms, nodes) for route, path, cost, time_ms, nodes in test_results if path]
-    
-    if not successful:
-        print("No successful routes found")
-        return
-    
-    costs = [cost for _, _, cost, _, _ in successful]
-    times = [time_ms for _, _, _, time_ms, _ in successful]
-    nodes = [n for _, _, _, _, n in successful]
-    
-    print(f"Performance Summary:")
-    print(f"  Routes found: {len(successful)}/{len(test_results)}")
-    print(f"  Success rate: {len(successful)/len(test_results)*100:.1f}%")
-    
-    print(f"\nCost Analysis:")
-    print(f"  Cheapest route: ₹{min(costs):.2f}")
-    print(f"  Most expensive: ₹{max(costs):.2f}")
-    print(f"  Average cost: ₹{sum(costs)/len(costs):.2f}")
-    
-    print(f"\nPerformance Metrics:")
-    print(f"  Average execution time: {sum(times)/len(times):.2f}ms")
-    print(f"  Average nodes explored: {sum(nodes)/len(nodes):.1f}")
-    print(f"  Algorithm efficiency: {(1 - sum(nodes)/len(nodes)/15)*100:.1f}% (less exploration = better)")
-    
-    print(f"\nDetailed Route Results:")
-    for route, path, cost, time_ms, nodes_explored in successful:
-        path_str = ' → '.join(path)
-        stops = len(path) - 1
-        print(f"  {route}: {path_str}")
-        print(f"    Cost: ₹{cost:.2f}, Stops: {stops}, Time: {time_ms:.2f}ms, Nodes: {nodes_explored}")
-
-def explain_algorithm():
-    """Explain how Dijkstra works on this dataset"""
-    print("\n" + "="*50)
-    print("ALGORITHM EXPLANATION")
-    print("="*50)
-    
-    print("How Dijkstra Works Here:")
-    print("1. Uses pre-discounted flight prices from Dylan's data processing")
-    print("2. Finds mathematically optimal shortest path")
-    print("3. Guarantees best solution for positive weights")
-    print("4. Uses priority queue for efficient exploration")
-    
-    print("\nDiscount System Context:")
-    print("- IndiGo Loyalty: 15% off IndiGo flights")
-    print("- Jet Airways Loyalty: 20% off Jet Airways flights")
-    print("- Credit Card Cashback: ₹1,000 off ALL airlines")
-    print("- Seasonal Discount: 25% off ALL airlines")
-    print("- Best discount automatically applied to each route")
-    
-    print("\nDijkstra's Role in Team Comparison:")
-    print("✅ Provides baseline optimal paths using discounted weights")
-    print("✅ Fast and reliable for positive-weight graphs")
-    print("⚠️  Won't exploit multi-hop discount combinations (that's Bellman-Ford's job)")
-    print("⚠️  Single objective optimization only (Dynamic Programming handles constraints)")
-
-def main():
-    """Test Dijkstra algorithm with team's sample routes"""
-    print("DIJKSTRA ALGORITHM IMPLEMENTATION & ANALYSIS")
-    print("Team Flight Route Optimization Project")
-    print("="*60)
-    
-    try:
-        # Load the flight data
-        with open('graph_dijkstra.json', 'r') as f:
-            flights = json.load(f)
+    Args:
+        graph_file: Path to the graph JSON file
+        start: Starting city code
         
-        print(f"✅ Loaded flight graph with {len(flights)} cities")
-        
-        # Team's test routes from handoff document
-        test_routes = [
-            ('BLR', 'DEL'),  # Should find direct route ₹2,265
-            ('BOM', 'HYD'),  # Should be ₹883.50 (heavily discounted)
-            ('CCU', 'BOM'),  # Multi-hop opportunity for other algorithms
-            ('MAA', 'AMD'),  # No direct route, requires connections
-            ('DEL', 'COK'),  # Additional test case
-        ]
-        
-        print(f"\n🧪 Testing {len(test_routes)} routes...")
-        
-        results = []
-        for start, end in test_routes:
-            start_time = time.time()
-            path, cost, nodes_explored = dijkstra(flights, start, end)
-            execution_time = (time.time() - start_time) * 1000  # Convert to milliseconds
+    Returns:
+        Dictionary with routes to all reachable cities
+    """
+    start_time = time.time()
+    
+    # Load graph data
+    with open(graph_file, 'r') as f:
+        graph = json.load(f)
+    
+    if start not in graph:
+        return {
+            'error': f"Starting city '{start}' not found in graph",
+            'execution_time': time.time() - start_time
+        }
+    
+    # Run Dijkstra algorithm
+    distances, predecessors = dijkstra(graph, start)
+    
+    # Build results for all destinations
+    routes = {}
+    for dest in graph.keys():
+        if dest == start:
+            continue
             
-            route_name = f"{start}→{end}"
-            results.append((route_name, path, cost, execution_time, nodes_explored))
+        if distances[dest] == float('inf'):
+            routes[dest] = {
+                'reachable': False,
+                'cost': float('inf')
+            }
+        else:
+            # Reconstruct path
+            path = []
+            current = dest
+            while current is not None:
+                path.append(current)
+                current = predecessors[current]
+            path.reverse()
             
-            if path:
-                path_str = ' → '.join(path)
-                print(f"  ✅ {route_name}: {path_str}, ₹{cost:.2f}")
-            else:
-                print(f"  ❌ {route_name}: No route found")
+            routes[dest] = {
+                'reachable': True,
+                'path': path,
+                'cost': distances[dest],
+                'stops': len(path) - 1
+            }
+    
+    return {
+        'source': start,
+        'routes': routes,
+        'total_reachable': sum(1 for r in routes.values() if r['reachable']),
+        'execution_time': time.time() - start_time
+    }
+
+def compare_routes(graph_file: str, routes_to_test: List[Tuple[str, str]]) -> List[Dict]:
+    """
+    Compare multiple routes for benchmarking.
+    
+    Args:
+        graph_file: Path to the graph JSON file
+        routes_to_test: List of (source, destination) tuples
         
-        # Analyze results
-        analyze_results(results)
-        
-        # Explain algorithm
-        explain_algorithm()
-        
-        # Generate comparison data for team
-        print(f"\n" + "="*50)
-        print("DATA FOR TEAM ALGORITHM COMPARISON")
-        print("="*50)
-        print("Route | Dijkstra Cost | Path | Notes")
-        print("-" * 50)
-        
-        for route_name, path, cost, _, _ in results:
-            if path:
-                path_str = ' → '.join(path)
-                stops = len(path) - 1
-                print(f"{route_name:<8} | ₹{cost:<10.2f} | {path_str:<15} | {stops} stops")
-            else:
-                print(f"{route_name:<8} | {'FAILED':<10} | {'N/A':<15} | No path")
-        
-        print(f"\n📋 Next Steps for Team:")
-        print("1. Run same routes on Bellman-Ford algorithm")
-        print("2. Compare costs - Bellman-Ford may find cheaper multi-hop paths")
-        print("3. Test Dynamic Programming with airline/time constraints")
-        print("4. Analyze where each algorithm performs best")
-        
-    except FileNotFoundError:
-        print("❌ Error: graph_dijkstra.json not found")
-        print("Please ensure Dylan's processed data file is in the current directory")
-    except Exception as e:
-        print(f"❌ Error: {e}")
+    Returns:
+        List of route results for comparison
+    """
+    results = []
+    
+    for source, dest in routes_to_test:
+        result = find_shortest_path(graph_file, source, dest)
+        result['route'] = f"{source} → {dest}"
+        results.append(result)
+    
+    return results
 
 if __name__ == "__main__":
-    main()
+    # Path to the graph file
+    graph_file = "graph_dijkstra.json"
+    
+    print("=== Dijkstra Algorithm for Flight Route Optimization ===\n")
+    
+    # Find route from Bangalore to Delhi
+    print("Test 1: BLR (Bangalore) to DEL (Delhi)")
+    result = find_shortest_path(graph_file, "BLR", "DEL")
+    if result.get('error'):
+        print(f"Error: {result['error']}")
+    else:
+        print(f"Path: {' → '.join(result['path'])}")
+        print(f"Total Cost: ₹{result['cost']:,.2f}")
+        print(f"Number of Stops: {result['stops']}")
+        print(f"Execution Time: {result['execution_time']:.4f} seconds")
+    
+    print("\n" + "="*50 + "\n")
+    
+    # Find route requiring connections
+    print("Test 2: MAA (Chennai) to AMD (Ahmedabad)")
+    result = find_shortest_path(graph_file, "MAA", "AMD")
+    if result.get('error'):
+        print(f"Error: {result['error']}")
+    else:
+        print(f"Path: {' → '.join(result['path'])}")
+        print(f"Total Cost: ₹{result['cost']:,.2f}")
+        print(f"Number of Stops: {result['stops']}")
+        print(f"Execution Time: {result['execution_time']:.4f} seconds")
+    
+    print("\n" + "="*50 + "\n")
+    
+    # Analyze all routes from a city
+    print("Test 3: All routes from CCU (Kolkata)")
+    analysis = analyze_all_routes_from_city(graph_file, "CCU")
+    if analysis.get('error'):
+        print(f"Error: {analysis['error']}")
+    else:
+        print(f"Total reachable cities: {analysis['total_reachable']}")
+        print(f"Execution Time: {analysis['execution_time']:.4f} seconds")
+        print("\nTop 5 cheapest destinations:")
+        
+        # Sort by cost and show top 5
+        sorted_routes = sorted(
+            [(dest, info) for dest, info in analysis['routes'].items() if info['reachable']],
+            key=lambda x: x[1]['cost']
+        )[:5]
+        
+        for dest, info in sorted_routes:
+            print(f"  {dest}: ₹{info['cost']:,.2f} ({info['stops']} stop{'s' if info['stops'] != 1 else ''})")
+    
+    print("\n" + "="*50 + "\n")
+    
+    # Compare multiple routes
+    print("Test 4: Route Comparison")
+    test_routes = [
+        ("BLR", "DEL"),
+        ("CCU", "BOM"),
+        ("DEL", "MAA"),
+        ("BOM", "HYD")
+    ]
+    
+    comparisons = compare_routes(graph_file, test_routes)
+    print(f"{'Route':<15} {'Cost':<12} {'Stops':<8} {'Time (s)':<10}")
+    print("-" * 50)
+    for comp in comparisons:
+        if comp.get('error'):
+            print(f"{comp['route']:<15} {'Error':<12} {'-':<8} {comp['execution_time']:<10.4f}")
+        else:
+            print(f"{comp['route']:<15} ₹{comp['cost']:<11,.2f} {comp['stops']:<8} {comp['execution_time']:<10.4f}")
