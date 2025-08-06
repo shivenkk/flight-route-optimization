@@ -11,191 +11,191 @@
   {
     "source": "BLR",
     "destination": "NAG",
-    "weight": 8454.825,
+    "weight": 7687.5,
     "price": 7673.25,
     "airline": "IndiGo",
     "duration_minutes": 285,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "BOM",
-    "weight": 5439.375,
+    "weight": 4946.25,
     "price": 4931.25,
     "airline": "IndiGo",
     "duration_minutes": 300,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "COK",
-    "weight": 3818.825,
+    "weight": 3473.0,
     "price": 3458.25,
     "airline": "SpiceJet",
     "duration_minutes": 295,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "MAA",
-    "weight": 4237.15,
+    "weight": 3855.25,
     "price": 3819.0,
     "airline": "Air India",
     "duration_minutes": 725,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "HYD",
-    "weight": 3355.175,
+    "weight": 3051.5,
     "price": 3036.75,
     "airline": "IndiGo",
     "duration_minutes": 295,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "CCU",
-    "weight": 6929.1,
+    "weight": 5779.5,
     "price": 5748.0,
     "airline": "Air India",
     "duration_minutes": 630,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "PNQ",
-    "weight": 5913.425,
+    "weight": 5378.0,
     "price": 5354.25,
     "airline": "SpiceJet",
     "duration_minutes": 475,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "LKO",
-    "weight": 5135.85,
+    "weight": 4670.25,
     "price": 4656.0,
     "airline": "IndiGo",
     "duration_minutes": 285,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "AMD",
-    "weight": 5049.375,
+    "weight": 4594.5,
     "price": 4548.75,
     "airline": "Vistara",
     "duration_minutes": 915,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "BBI",
-    "weight": 7209.55,
+    "weight": 6556.0,
     "price": 6535.5,
     "airline": "Air India",
     "duration_minutes": 410,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "GAU",
-    "weight": 7586.95,
+    "weight": 6899.5,
     "price": 6874.5,
     "airline": "Air India",
     "duration_minutes": 500,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BLR",
     "destination": "IDR",
-    "weight": 5254.575,
+    "weight": 4778.25,
     "price": 4763.25,
     "airline": "IndiGo",
     "duration_minutes": 300,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "DEL",
     "destination": "LKO",
-    "weight": 4781.625,
+    "weight": 4348.5,
     "price": 4331.25,
     "airline": "IndiGo",
     "duration_minutes": 345,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "DEL",
     "destination": "BOM",
-    "weight": 3190.6,
+    "weight": 2903.0,
     "price": 2876.0,
     "airline": "GoAir",
     "duration_minutes": 540,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "DEL",
     "destination": "BLR",
-    "weight": 3818.825,
+    "weight": 3473.0,
     "price": 3458.25,
     "airline": "SpiceJet",
     "duration_minutes": 295,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "DEL",
     "destination": "AMD",
-    "weight": 3405.2,
+    "weight": 3097.25,
     "price": 3079.5,
     "airline": "GoAir",
     "duration_minutes": 355,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "DEL",
     "destination": "PNQ",
-    "weight": 3394.35,
+    "weight": 3087.0,
     "price": 3073.5,
     "airline": "SpiceJet",
     "duration_minutes": 270,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "DEL",
     "destination": "CCU",
-    "weight": 8993.4,
+    "weight": 7506.0,
     "price": 7437.0,
     "airline": "Air India",
     "duration_minutes": 1380,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "DEL",
     "destination": "IDR",
-    "weight": 8368.85,
+    "weight": 6980.75,
     "price": 6940.5,
     "airline": "Jet Airways",
     "duration_minutes": 805,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "DEL",
     "destination": "NAG",
-    "weight": 7051.9,
+    "weight": 5895.25,
     "price": 5783.25,
     "airline": "Air India",
     "duration_minutes": 2240,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "DEL",
     "destination": "HYD",
-    "weight": 4183.3,
+    "weight": 3804.25,
     "price": 3790.5,
     "airline": "IndiGo",
     "duration_minutes": 275,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "DEL",
@@ -209,38 +209,38 @@
   {
     "source": "DEL",
     "destination": "MAA",
-    "weight": 3740.025,
+    "weight": 3403.5,
     "price": 3365.25,
     "airline": "Air India",
     "duration_minutes": 765,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "DEL",
     "destination": "BBI",
-    "weight": 6395.825,
+    "weight": 5816.0,
     "price": 5798.25,
     "airline": "IndiGo",
     "duration_minutes": 355,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "CCU",
     "destination": "IXR",
-    "weight": 4697.8,
+    "weight": 3919.0,
     "price": 3894.0,
     "airline": "Air Asia",
     "duration_minutes": 500,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "CCU",
     "destination": "NAG",
-    "weight": 5146.1,
+    "weight": 4679.75,
     "price": 4663.5,
     "airline": "IndiGo",
     "duration_minutes": 325,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "CCU",
@@ -254,236 +254,236 @@
   {
     "source": "CCU",
     "destination": "BOM",
-    "weight": 5053.125,
+    "weight": 4596.0,
     "price": 4571.25,
     "airline": "GoAir",
     "duration_minutes": 495,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "CCU",
     "destination": "GAU",
-    "weight": 4648.35,
+    "weight": 4227.75,
     "price": 4206.0,
     "airline": "Jet Airways",
     "duration_minutes": 435,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "CCU",
     "destination": "MAA",
-    "weight": 3498.45,
+    "weight": 3181.5,
     "price": 3169.5,
     "airline": "IndiGo",
     "duration_minutes": 240,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "CCU",
     "destination": "HYD",
-    "weight": 2741.25,
+    "weight": 2493.25,
     "price": 2480.0,
     "airline": "IndiGo",
     "duration_minutes": 265,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "CCU",
     "destination": "DEL",
-    "weight": 4318.9,
+    "weight": 3929.5,
     "price": 3894.0,
     "airline": "Air Asia",
     "duration_minutes": 710,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "CCU",
     "destination": "BBI",
-    "weight": 3497.45,
+    "weight": 3180.5,
     "price": 3169.5,
     "airline": "IndiGo",
     "duration_minutes": 220,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "CCU",
     "destination": "PNQ",
-    "weight": 4908.0,
+    "weight": 4463.25,
     "price": 4447.5,
     "airline": "IndiGo",
     "duration_minutes": 315,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "CCU",
     "destination": "AMD",
-    "weight": 4288.825,
+    "weight": 3901.0,
     "price": 3878.25,
     "airline": "GoAir",
     "duration_minutes": 455,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "IXR",
     "destination": "BBI",
-    "weight": 5028.05,
+    "weight": 4193.75,
     "price": 4171.5,
     "airline": "Air India",
     "duration_minutes": 445,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "IXR",
     "destination": "DEL",
-    "weight": 4697.8,
+    "weight": 3919.0,
     "price": 3894.0,
     "airline": "Air Asia",
     "duration_minutes": 500,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "BBI",
     "destination": "BLR",
-    "weight": 3497.45,
+    "weight": 3180.5,
     "price": 3169.5,
     "airline": "IndiGo",
     "duration_minutes": 220,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BBI",
     "destination": "BOM",
-    "weight": 8361.7,
+    "weight": 6973.0,
     "price": 6943.5,
     "airline": "Air India",
     "duration_minutes": 590,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "BBI",
     "destination": "IXR",
-    "weight": 10821.975,
+    "weight": 8349.0,
     "price": 8243.25,
     "airline": "Air India",
     "duration_minutes": 2115,
-    "stops": 3
+    "stops": 0
   },
   {
     "source": "BBI",
     "destination": "DEL",
-    "weight": 6929.1,
+    "weight": 5779.5,
     "price": 5748.0,
     "airline": "Air India",
     "duration_minutes": 630,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "BBI",
     "destination": "HYD",
-    "weight": 4240.8,
+    "weight": 3543.75,
     "price": 3485.25,
     "airline": "Air India",
     "duration_minutes": 1170,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "BBI",
     "destination": "COK",
-    "weight": 6395.825,
+    "weight": 5816.0,
     "price": 5798.25,
     "airline": "IndiGo",
     "duration_minutes": 355,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "COK",
     "destination": "DEL",
-    "weight": 5034.25,
+    "weight": 4583.5,
     "price": 4507.5,
     "airline": "Air India",
     "duration_minutes": 1520,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "COK",
     "destination": "BLR",
-    "weight": 9413.2,
+    "weight": 7852.0,
     "price": 7806.0,
     "airline": "Air India",
     "duration_minutes": 920,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "COK",
     "destination": "MAA",
-    "weight": 8759.7,
+    "weight": 7308.0,
     "price": 7258.5,
     "airline": "Air India",
     "duration_minutes": 990,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "LKO",
     "destination": "BOM",
-    "weight": 9706.95,
+    "weight": 8101.5,
     "price": 8027.25,
     "airline": "Air India",
     "duration_minutes": 1485,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "LKO",
     "destination": "COK",
-    "weight": 4781.625,
+    "weight": 4348.5,
     "price": 4331.25,
     "airline": "IndiGo",
     "duration_minutes": 345,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "LKO",
     "destination": "DEL",
-    "weight": 5135.85,
+    "weight": 4670.25,
     "price": 4656.0,
     "airline": "IndiGo",
     "duration_minutes": 285,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BOM",
     "destination": "COK",
-    "weight": 3190.6,
+    "weight": 2903.0,
     "price": 2876.0,
     "airline": "GoAir",
     "duration_minutes": 540,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BOM",
     "destination": "DEL",
-    "weight": 5439.375,
+    "weight": 4946.25,
     "price": 4931.25,
     "airline": "IndiGo",
     "duration_minutes": 300,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BOM",
     "destination": "BLR",
-    "weight": 5053.125,
+    "weight": 4596.0,
     "price": 4571.25,
     "airline": "GoAir",
     "duration_minutes": 495,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BOM",
     "destination": "AMD",
-    "weight": 8270.775,
+    "weight": 7522.5,
     "price": 7482.75,
     "airline": "Air India",
     "duration_minutes": 795,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BOM",
@@ -497,83 +497,83 @@
   {
     "source": "BOM",
     "destination": "IDR",
-    "weight": 10195.85,
+    "weight": 8510.75,
     "price": 8425.5,
     "airline": "Air India",
     "duration_minutes": 1705,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "BOM",
     "destination": "NAG",
-    "weight": 10773.75,
+    "weight": 8991.0,
     "price": 8913.75,
     "airline": "Air India",
     "duration_minutes": 1545,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "BOM",
     "destination": "PNQ",
-    "weight": 9149.2,
+    "weight": 7631.5,
     "price": 7588.5,
     "airline": "Jet Airways",
     "duration_minutes": 860,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "BOM",
     "destination": "CCU",
-    "weight": 13794.7,
+    "weight": 12544.75,
     "price": 12499.5,
     "airline": "Air India",
     "duration_minutes": 905,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BOM",
     "destination": "MAA",
-    "weight": 5737.325,
+    "weight": 5219.75,
     "price": 5175.75,
     "airline": "Air India",
     "duration_minutes": 880,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "BOM",
     "destination": "BBI",
-    "weight": 11959.85,
+    "weight": 10879.25,
     "price": 10806.0,
     "airline": "Air India",
     "duration_minutes": 1465,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "NAG",
     "destination": "BLR",
-    "weight": 5146.1,
+    "weight": 4679.75,
     "price": 4663.5,
     "airline": "IndiGo",
     "duration_minutes": 325,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "NAG",
     "destination": "DEL",
-    "weight": 8454.825,
+    "weight": 7687.5,
     "price": 7673.25,
     "airline": "IndiGo",
     "duration_minutes": 285,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "NAG",
     "destination": "BOM",
-    "weight": 7051.9,
+    "weight": 5895.25,
     "price": 5783.25,
     "airline": "Air India",
     "duration_minutes": 2240,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "MAA",
@@ -587,208 +587,208 @@
   {
     "source": "MAA",
     "destination": "BLR",
-    "weight": 3498.45,
+    "weight": 3181.5,
     "price": 3169.5,
     "airline": "IndiGo",
     "duration_minutes": 240,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "MAA",
     "destination": "COK",
-    "weight": 3740.025,
+    "weight": 3403.5,
     "price": 3365.25,
     "airline": "Air India",
     "duration_minutes": 765,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "MAA",
     "destination": "DEL",
-    "weight": 4237.15,
+    "weight": 3855.25,
     "price": 3819.0,
     "airline": "Air India",
     "duration_minutes": 725,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "MAA",
     "destination": "BOM",
-    "weight": 7366.7,
+    "weight": 6152.0,
     "price": 6073.5,
     "airline": "Jet Airways",
     "duration_minutes": 1570,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "MAA",
     "destination": "HYD",
-    "weight": 5737.325,
+    "weight": 5219.75,
     "price": 5175.75,
     "airline": "Air India",
     "duration_minutes": 880,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "AMD",
     "destination": "BOM",
-    "weight": 6049.7,
+    "weight": 5053.25,
     "price": 4982.25,
     "airline": "Jet Airways",
     "duration_minutes": 1420,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "AMD",
     "destination": "DEL",
-    "weight": 5049.375,
+    "weight": 4594.5,
     "price": 4548.75,
     "airline": "Vistara",
     "duration_minutes": 915,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "AMD",
     "destination": "BLR",
-    "weight": 4288.825,
+    "weight": 3901.0,
     "price": 3878.25,
     "airline": "GoAir",
     "duration_minutes": 455,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "AMD",
     "destination": "COK",
-    "weight": 3405.2,
+    "weight": 3097.25,
     "price": 3079.5,
     "airline": "GoAir",
     "duration_minutes": 355,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "AMD",
     "destination": "HYD",
-    "weight": 8270.775,
+    "weight": 7522.5,
     "price": 7482.75,
     "airline": "Air India",
     "duration_minutes": 795,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "PNQ",
     "destination": "COK",
-    "weight": 3394.35,
+    "weight": 3087.0,
     "price": 3073.5,
     "airline": "SpiceJet",
     "duration_minutes": 270,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "PNQ",
     "destination": "BLR",
-    "weight": 4908.0,
+    "weight": 4463.25,
     "price": 4447.5,
     "airline": "IndiGo",
     "duration_minutes": 315,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "PNQ",
     "destination": "DEL",
-    "weight": 5913.425,
+    "weight": 5378.0,
     "price": 5354.25,
     "airline": "SpiceJet",
     "duration_minutes": 475,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "PNQ",
     "destination": "HYD",
-    "weight": 13354.65,
+    "weight": 12141.75,
     "price": 12129.0,
     "airline": "Air India",
     "duration_minutes": 255,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "IDR",
     "destination": "BOM",
-    "weight": 8368.85,
+    "weight": 6980.75,
     "price": 6940.5,
     "airline": "Jet Airways",
     "duration_minutes": 805,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "IDR",
     "destination": "DEL",
-    "weight": 5254.575,
+    "weight": 4778.25,
     "price": 4763.25,
     "airline": "IndiGo",
     "duration_minutes": 300,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "GAU",
     "destination": "DEL",
-    "weight": 7586.95,
-    "price": 6874.5,
+    "weight": 6546.75,
+    "price": 6455.25,
     "airline": "Air India",
-    "duration_minutes": 500,
-    "stops": 1
+    "duration_minutes": 1830,
+    "stops": 0
   },
   {
     "source": "GAU",
     "destination": "BLR",
-    "weight": 4648.35,
+    "weight": 4227.75,
     "price": 4206.0,
     "airline": "Jet Airways",
     "duration_minutes": 435,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "HYD",
     "destination": "COK",
-    "weight": 4183.3,
+    "weight": 3804.25,
     "price": 3790.5,
     "airline": "IndiGo",
     "duration_minutes": 275,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "HYD",
     "destination": "BLR",
-    "weight": 2741.25,
+    "weight": 2493.25,
     "price": 2480.0,
     "airline": "IndiGo",
     "duration_minutes": 265,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "HYD",
     "destination": "DEL",
-    "weight": 3355.175,
+    "weight": 3051.5,
     "price": 3036.75,
     "airline": "IndiGo",
     "duration_minutes": 295,
-    "stops": 1
+    "stops": 0
   },
   {
     "source": "HYD",
     "destination": "MAA",
-    "weight": 5384.0,
+    "weight": 4493.75,
     "price": 4451.25,
     "airline": "Multiple carriers",
     "duration_minutes": 850,
-    "stops": 2
+    "stops": 0
   },
   {
     "source": "HYD",
     "destination": "BOM",
-    "weight": 7290.05,
+    "weight": 6082.25,
     "price": 6039.0,
     "airline": "Air India",
     "duration_minutes": 865,
-    "stops": 2
+    "stops": 0
   }
 ]

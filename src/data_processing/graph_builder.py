@@ -72,14 +72,10 @@ class FlightGraph:
             from .utils import parse_duration
             duration_minutes = parse_duration(flight.duration) or 0
         
-        # count intermediate stops for this route
-        num_stops = len(flight.route.intermediate_stops)
-        
-        # calculate weighted price considering duration and stops
+        # calculate weighted price considering duration (price + time penalty)
         weight = calculate_weighted_price(
             processed_flight.final_price,
-            duration_minutes,
-            num_stops
+            duration_minutes
         )
         
         # package all edge attributes for algorithms
@@ -89,7 +85,7 @@ class FlightGraph:
             'base_price': flight.base_price,           # original price
             'airline': flight.airline,                 # airline name
             'duration_minutes': duration_minutes,      # flight duration
-            'stops': num_stops,                        # number of stops
+            'stops': 0,                                # direct segment = 0 stops
             'flight_object': processed_flight,         # full flight data
             'is_primary_segment': is_primary_segment   # true for main route segment
         }

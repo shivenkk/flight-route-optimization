@@ -205,7 +205,7 @@ def compare_routes(graph_file: str, routes_to_test: List[Tuple[str, str]]) -> Li
 
 if __name__ == "__main__":
     # Path to the graph file
-    graph_file = "graph_dijkstra.json"
+    graph_file = "output/graph_dijkstra.json"
     
     print("=== Dijkstra Algorithm for Flight Route Optimization ===\n")
     
