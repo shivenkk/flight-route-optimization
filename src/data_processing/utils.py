@@ -102,11 +102,15 @@ def clean_airline_name(airline: str) -> str:
     return airline.strip()
 
 
+# penalty constants for weighted price calculation
+DURATION_PENALTY_PER_MINUTE = 0.05  # small penalty per minute
+STOPS_PENALTY_PERCENTAGE = 0.1       # 10% penalty per stop
+
 # calculate simple weighted price for graph edges
 def calculate_weighted_price(base_price: float, duration_minutes: int, num_stops: int) -> float:
     # add small penalties to base price for duration and stops
-    duration_penalty = duration_minutes * 0.05  # small penalty per minute
-    stops_penalty = num_stops * base_price * 0.1  # 10% penalty per stop
+    duration_penalty = duration_minutes * DURATION_PENALTY_PER_MINUTE
+    stops_penalty = num_stops * base_price * STOPS_PENALTY_PERCENTAGE
     
     # return total weighted cost
     return base_price + duration_penalty + stops_penalty

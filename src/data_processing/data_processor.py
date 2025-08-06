@@ -59,7 +59,7 @@ class FlightDataCleaner:
         high_price_mask = cleaned_df['Cleaned_Price'] > 50000
         high_price_count = high_price_mask.sum()
         if high_price_count > 0:
-            errors.extend([f"Found {high_price_count} flights with prices above $50,000"])
+            errors.extend([f"Found {high_price_count} flights with prices above ₹50,000"])
         
         # create mask for valid flight records
         valid_mask = (
@@ -227,8 +227,8 @@ class DiscountEngine:
                 if discount_amount > best_discount:
                     best_discount = discount_amount
             
-            # apply best discount but keep minimum 30% of original price
-            final_price = max(flight.base_price * 0.3, flight.base_price - best_discount)
+            # apply best discount but keep minimum 50% of original price
+            final_price = max(flight.base_price * 0.5, flight.base_price - best_discount)
             
             # track how many flights got discounts
             if best_discount > 0:

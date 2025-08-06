@@ -1,27 +1,6 @@
 from typing import Dict, List
 from .models import Discount, DiscountType
 
-# maps various city name formats to standardized names
-CITY_NAME_MAPPINGS: Dict[str, str] = {
-    "Banglore": "Bangalore",      # common misspelling
-    "New Delhi": "Delhi",         # variant name
-    "DEL": "Delhi",               # airport code variants
-    "BLR": "Bangalore", 
-    "BOM": "Mumbai",
-    "CCU": "Kolkata",
-    "MAA": "Chennai",
-    "COK": "Cochin",
-    "HYD": "Hyderabad",
-    "PNQ": "Pune",
-    "LKO": "Lucknow",
-    "AMD": "Ahmedabad",
-    "NAG": "Nagpur",
-    "IDR": "Indore",
-    "IXR": "Ranchi",
-    "BBI": "Bhubaneswar",
-    "GAU": "Guwahati"
-}
-
 # maps airport codes to full city names for lookup
 CITY_CODE_TO_NAME: Dict[str, str] = {
     "DEL": "Delhi",
@@ -39,6 +18,13 @@ CITY_CODE_TO_NAME: Dict[str, str] = {
     "IXR": "Ranchi",
     "BBI": "Bhubaneswar",
     "GAU": "Guwahati"
+}
+
+# maps various city name formats to standardized names
+CITY_NAME_MAPPINGS: Dict[str, str] = {
+    "Banglore": "Bangalore",      # common misspelling
+    "New Delhi": "Delhi",         # variant name
+    **CITY_CODE_TO_NAME           # include all airport code mappings
 }
 
 # realistic discount scenarios automatically applied to all flights
