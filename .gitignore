@@ -48,3 +48,8 @@ Thumbs.db
 *.log
 temp/
 tmp/
+
+# Generated output files
+output/
+*.png
+*.json
